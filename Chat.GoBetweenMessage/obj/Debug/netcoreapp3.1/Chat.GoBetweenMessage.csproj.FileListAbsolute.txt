@@ -1,0 +1,8 @@
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/bin/Debug/netcoreapp3.1/Chat.GoBetweenMessage.deps.json
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/bin/Debug/netcoreapp3.1/Chat.GoBetweenMessage.dll
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/bin/Debug/netcoreapp3.1/Chat.GoBetweenMessage.pdb
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/obj/Debug/netcoreapp3.1/Chat.GoBetweenMessage.csprojAssemblyReference.cache
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/obj/Debug/netcoreapp3.1/Chat.GoBetweenMessage.AssemblyInfoInputs.cache
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/obj/Debug/netcoreapp3.1/Chat.GoBetweenMessage.AssemblyInfo.cs
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/obj/Debug/netcoreapp3.1/Chat.GoBetweenMessage.dll
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/obj/Debug/netcoreapp3.1/Chat.GoBetweenMessage.pdb

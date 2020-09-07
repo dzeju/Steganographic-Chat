@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Chat.Avalonia.-1554804338.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Chat.Avalonia" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="Chat.Avalonia.csproj" t="IncludeRecursive" />
+        <e p="ChatMessage.cs" t="Include" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="SendMessageCommand.cs" t="Include" />
+        <e p="SignalRChatService.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="nuget.config" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Avalonia" t="Include">
+                <e p="resources" t="Include" />
+              </e>
+              <e p="Chat.Avalonia.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Chat.Avalonia.sln" t="IncludeFlat" />
+      <e p="Chat.GoBetweenMessage" t="IncludeRecursive">
+        <e p="Chat.GoBetweenMessage.csproj" t="IncludeRecursive" />
+        <e p="GoBetweenMessage.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Chat.GoBetweenMessage.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Chat.SignalR" t="IncludeRecursive">
+        <e p="Chat.SignalR.csproj" t="IncludeRecursive" />
+        <e p="Hubs" t="Include">
+          <e p="ChatHub.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="Chat.SignalR.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

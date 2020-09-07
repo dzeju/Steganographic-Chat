@@ -1,0 +1,8 @@
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/bin/Debug/netcoreapp3.1/Chat.Message.deps.json
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/bin/Debug/netcoreapp3.1/Chat.Message.dll
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/bin/Debug/netcoreapp3.1/Chat.Message.pdb
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/obj/Debug/netcoreapp3.1/Chat.Message.csprojAssemblyReference.cache
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/obj/Debug/netcoreapp3.1/Chat.Message.AssemblyInfoInputs.cache
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/obj/Debug/netcoreapp3.1/Chat.Message.AssemblyInfo.cs
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/obj/Debug/netcoreapp3.1/Chat.Message.dll
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.Message/obj/Debug/netcoreapp3.1/Chat.Message.pdb
