@@ -4,11 +4,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         x:Class="Chat.Avalonia.MainWindow"
-        Title="Chat.Avalonia" Width="500" Height="400">
-    <StackPanel>
-        <ListBox Items="{Binding Path=StringList}" Height="300"/>
-        <TextBox x:Name="MessTxtBox" Text="{Binding Path=MessageToSend, Mode=OneWayToSource}"/>
-        <Button x:Name="SendBtn" Content="Send" Height="30" />
-        <TextBlock Text="{Binding ErrorMessage}"/>
-    </StackPanel>
+        Title="Chat.Avalonia" Width="500" Height="355">
+    <DockPanel Height="NaN">
+        <ListBox Items="{Binding Path=StringList}" 
+                 Height="300"
+                 DockPanel.Dock="Top"/>
+        <DockPanel DockPanel.Dock="Top">
+            <TextBox x:Name="MessTxtBox" 
+                     Width="380"
+                     Height="30"
+                     Text="{Binding Path=MessageToSend, 
+                     Mode=OneWayToSource}"/>
+            <Button x:Name="BrowseBtn" 
+                    Content="Browse..." 
+                    Height="30" 
+                    Width="60"/>
+            <Button x:Name="SendBtn" 
+                    Content="Send" 
+                    Height="30" 
+                    Width="60"/>
+        </DockPanel>
+        <TextBlock Text="{Binding Path=ErrorMessage}" 
+                   Height="NaN"
+                   DockPanel.Dock="Bottom"/>
+    </DockPanel>
 </Window>

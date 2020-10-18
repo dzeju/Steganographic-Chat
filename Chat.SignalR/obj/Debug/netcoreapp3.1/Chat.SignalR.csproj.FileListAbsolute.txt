@@ -16,6 +16,6 @@
 /home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/obj/Debug/netcoreapp3.1/staticwebassets/Chat.SignalR.StaticWebAssets.xml
 /home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/obj/Debug/netcoreapp3.1/Chat.SignalR.dll
 /home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/obj/Debug/netcoreapp3.1/Chat.SignalR.pdb
-/home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/bin/Debug/netcoreapp3.1/Chat.Message.dll
-/home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/bin/Debug/netcoreapp3.1/Chat.Message.pdb
 /home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/obj/Debug/netcoreapp3.1/Chat.SignalR.csproj.CopyComplete
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/bin/Debug/netcoreapp3.1/Chat.GoBetweenMessage.dll
+/home/dzeju/RiderProjects/Chat.Avalonia/Chat.SignalR/bin/Debug/netcoreapp3.1/Chat.GoBetweenMessage.pdb

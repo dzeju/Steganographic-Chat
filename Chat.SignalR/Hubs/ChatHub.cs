@@ -8,7 +8,7 @@ namespace Chat.SignalR
     {
         public async Task SendMessage(Message.GoBetweenMessage message)
         {
-            await Clients.All.SendAsync("ReceiveMessage", message);
+            await Clients.Others.SendAsync("ReceiveMessage", message);
         }
     }
 }
