@@ -12,6 +12,8 @@
         <e p="ChatMessage.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="PathWindow.xaml" t="Include" />
+        <e p="PathWindow.xaml.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="SendMessageCommand.cs" t="Include" />
         <e p="SignalRChatService.cs" t="Include" />

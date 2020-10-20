@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -31,12 +32,22 @@ namespace Chat.Avalonia
 
         private async void BrowseBtn_Click(object sender, RoutedEventArgs e)
         {
-            await new OpenFileDialog()
+            var window = new PathWindow();
+            window.PassDataContext(_chatMessage);
+            window.Show();
+            /*try
             {
-                Title = "Open file",
-                // Almost guaranteed to exist
-                InitialFileName = Assembly.GetEntryAssembly()?.GetModules().FirstOrDefault()?.FullyQualifiedName
-            }.ShowAsync((Window)this.VisualRoot);
+                await new OpenFileDialog()
+                {
+                    Title = "Open file",
+                    // Almost guaranteed to exist
+                    //InitialFileName = Assembly.GetEntryAssembly()?.GetModules().FirstOrDefault()?.FullyQualifiedName
+                }.ShowAsync((Window) this.VisualRoot);
+            }
+            catch (Exception ex)
+            {
+                _chatMessage.ErrorMessage = ex.Message;
+            }*/
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)

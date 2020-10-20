@@ -10,6 +10,7 @@ namespace Chat.Avalonia
     {
         private string _messageToSend;
         private string _errorMessage;
+        private string _pathToFile;
         private ObservableCollection<Message.GoBetweenMessage> _messageList;
         private ObservableCollection<string> _stringList;
         
@@ -33,6 +34,16 @@ namespace Chat.Avalonia
             }
         }
 
+        public string PathToFile
+        {
+            get => _pathToFile;
+            set
+            {
+                _pathToFile = value;
+                OnPropertyChanged(nameof(PathToFile));
+            }
+        }
+        
         public string ErrorMessage
         {
             get => _errorMessage;
