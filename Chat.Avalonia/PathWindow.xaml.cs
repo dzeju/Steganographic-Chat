@@ -12,6 +12,7 @@ namespace Chat.Avalonia
     public class PathWindow : Window
     {
         private ChatMessage _chatMessage;
+        private ImageSteganography _image;
         public PathWindow()
         {
             InitializeComponent();
@@ -20,10 +21,10 @@ namespace Chat.Avalonia
             this.FindControl<Button>("OkBtn").Click += OkBtn_Click;
         }
 
-        public void PassDataContext(ChatMessage chatMessage)
+        public void PassDataContext(ChatMessage chatMessage, ImageSteganography image)
         {
             _chatMessage = chatMessage;
-            
+            _image = image;
             DataContext = _chatMessage;
         }
         
@@ -31,9 +32,8 @@ namespace Chat.Avalonia
         {
             try
             {
-                Image myFile = Image.FromFile(_chatMessage.PathToFile);
-
-                _chatMessage.ErrorMessage = @"Załadowano obraz";                
+                _image.MyImage = Image.FromFile(_chatMessage.PathToFile);
+                _chatMessage.ErrorMessage = @"Załadowano obraz";
                 this.Close(); //gotta add sth dude
             }
             catch (Exception)

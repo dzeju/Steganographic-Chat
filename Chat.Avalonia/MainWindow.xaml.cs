@@ -8,12 +8,14 @@ using Microsoft.AspNetCore.SignalR.Client;
 using System.Linq;
 using System.Reflection;
 using static System.String;
+using MessageBox.Avalonia;
 
 namespace Chat.Avalonia
 {
     public class MainWindow : Window
     {
         private readonly ChatMessage _chatMessage;
+        private readonly ImageSteganography _image;
         public MainWindow()
         {
             var connection = new HubConnectionBuilder()
@@ -21,6 +23,7 @@ namespace Chat.Avalonia
                 .Build();
             
             _chatMessage = new ChatMessage(new SignalRChatService(connection));
+            _image = new ImageSteganography();
 
             InitializeComponent();
             
@@ -33,21 +36,8 @@ namespace Chat.Avalonia
         private async void BrowseBtn_Click(object sender, RoutedEventArgs e)
         {
             var window = new PathWindow();
-            window.PassDataContext(_chatMessage);
+            window.PassDataContext(_chatMessage, _image);
             window.Show();
-            /*try
-            {
-                await new OpenFileDialog()
-                {
-                    Title = "Open file",
-                    // Almost guaranteed to exist
-                    //InitialFileName = Assembly.GetEntryAssembly()?.GetModules().FirstOrDefault()?.FullyQualifiedName
-                }.ShowAsync((Window) this.VisualRoot);
-            }
-            catch (Exception ex)
-            {
-                _chatMessage.ErrorMessage = ex.Message;
-            }*/
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -60,6 +50,17 @@ namespace Chat.Avalonia
 
         private void SendBtn_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                _image.ConcealMessage(_chatMessage.MessageToSend);
+            }
+            catch (Exception exception)
+            {
+                var messageBox = MessageBoxManager.GetMessageBoxStandardWindow(@"Błąd", exception.Message);
+                messageBox.Show();
+                //_chatMessage.ErrorMessage = exception.Message;
+            }
+            
             _chatMessage.SendMessageCommand.Execute(sender);
             
             this.FindControl<TextBox>("MessTxtBox").Text = Empty;

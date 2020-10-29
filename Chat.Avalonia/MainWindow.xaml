@@ -25,7 +25,7 @@
                     Width="60"/>
         </DockPanel>
         <TextBlock Text="{Binding Path=ErrorMessage}" 
-                   Height="NaN"
+                   Height="20"
                    DockPanel.Dock="Bottom"/>
     </DockPanel>
 </Window>

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IDpjtdhwcxbiUCmPCdOs0SJNmaJYXdgtJdoheKnmPP2mKn+/Wid86XGSkPBsbhEf5bR6T2jGb4czW41IgV2Iiw==",
+  "dgSpecHash": "r6o5i+fv3DbpGP3+lRaml5NvXpDvL8BdRUFd3aStQeQew5QP+maL3dY1WuzYFi+6QDEQw+qWJyS5HeyEYTZzOg==",
   "success": true,
   "projectFilePath": "/home/dzeju/RiderProjects/Chat.Avalonia/Chat.GoBetweenMessage/Chat.GoBetweenMessage.csproj",
   "expectedPackageFiles": [
-    "/home/dzeju/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.3/microsoft.aspnetcore.app.ref.3.1.3.nupkg.sha512"
+    "/home/dzeju/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.8/microsoft.aspnetcore.app.ref.3.1.8.nupkg.sha512"
   ],
   "logs": []
 }
