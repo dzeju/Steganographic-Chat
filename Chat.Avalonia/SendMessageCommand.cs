@@ -23,11 +23,11 @@ namespace Chat.Avalonia
         {
             try
             {
-                if (string.IsNullOrEmpty(_chatMessage.MessageToSend))
+                if (string.IsNullOrEmpty(_chatMessage.BlobName))
                     throw new Exception();
                 await _signalRChat.SendMessage(new Message.GoBetweenMessage()
                 {
-                    Message = _chatMessage.MessageToSend
+                    Message = _chatMessage.BlobName
                 });
 
                 _chatMessage.ErrorMessage = string.Empty;

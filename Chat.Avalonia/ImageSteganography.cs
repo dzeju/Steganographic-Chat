@@ -16,7 +16,7 @@ namespace Chat.Avalonia
             MyFile = null;
         }
         
-        public Image ConcealMessage(string message)
+        public string ConcealMessage(string message)
         {
             if (MyImage == null)
             {
@@ -41,14 +41,54 @@ namespace Chat.Avalonia
 
             BitsToImageConversion(imgBits);
             
-            SaveImage();
+            string filePath = "Sent/" + Guid.NewGuid() + ".bmp";
+            System.IO.File.WriteAllBytes(filePath, MyFile);
             
-            return MyImage;
+            return filePath;
+        }
+        
+        public string RevealMessage(Image concealedMessage)
+        {
+            MyImage = concealedMessage ?? throw new Exception(@"Brak obrazu w otrzymanej wiadomości!");
+
+            ImageToByteArrayConversion();
+            var imgBits = new BitArray(MyFile!);
+            //Console.WriteLine(BitConverter.ToString(MyFile).Substring(0,500) + "\n----------------------------------");
+            int k = 0;
+            int begin = ReadData(10, 13);
+
+            BitArray tmp = new BitArray(imgBits.Length / 4 );
+            for (int j = begin; j < begin + tmp.Length - 1; j++)
+            {
+                if ((j * 8) >= imgBits.Length - 1)
+                {
+                    break;
+                }
+                tmp[k] = imgBits[j * 8];
+                k++;
+                tmp[k] = imgBits[(j * 8) + 1];
+                k++;
+            }
+            string decodedMessage = BitsToStringConversion(tmp);
+            
+            return decodedMessage;
         }
 
-        private void SaveImage()
+        
+        private string BitsToStringConversion(BitArray tmp)
         {
-            System.IO.File.WriteAllBytes("Sent/LastSent.bmp", MyFile);
+            byte[] decrypted = new byte[tmp.Length / 2];
+            tmp.CopyTo(decrypted, 0);
+            string decoded = Encoding.UTF8.GetString(decrypted);
+            int finIndex = 20;
+            if (decoded.Contains("&fi"))
+            {
+                Console.WriteLine("widzi &fi");
+                finIndex = decoded.IndexOf("&fi"); //("&fin", 0, StringComparison.Ordinal);
+            }
+
+            
+            return decoded.Substring(0, finIndex);
         }
 
         private void ImageToByteArrayConversion()

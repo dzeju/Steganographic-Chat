@@ -48,22 +48,24 @@ namespace Chat.Avalonia
             }
         }
 
-        private void SendBtn_Click(object sender, RoutedEventArgs e)
+        private async void SendBtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                _image.ConcealMessage(_chatMessage.MessageToSend);
+                _chatMessage.ConcealedFilePath = _image.ConcealMessage(_chatMessage.MessageToHide + "&fi");
+                
+                Blobs blobs = new Blobs();
+                _chatMessage.BlobName = await blobs.UploadAsync(_chatMessage.ConcealedFilePath);
+                
+                _chatMessage.SendMessageCommand.Execute(sender);
+                this.FindControl<TextBox>("MessTxtBox").Text = Empty;
             }
             catch (Exception exception)
             {
                 var messageBox = MessageBoxManager.GetMessageBoxStandardWindow(@"Błąd", exception.Message);
-                messageBox.Show();
+                await messageBox.Show();
                 //_chatMessage.ErrorMessage = exception.Message;
             }
-            
-            _chatMessage.SendMessageCommand.Execute(sender);
-            
-            this.FindControl<TextBox>("MessTxtBox").Text = Empty;
         }
         
         private void InitializeComponent()

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using JetBrains.Annotations;
@@ -8,12 +10,21 @@ namespace Chat.Avalonia
 {
     public sealed class ChatMessage : INotifyPropertyChanged
     {
-        private string _messageToSend;
+        private string _messageToHide;
         private string _errorMessage;
         private string _pathToFile;
+        private string _blobName;
         private ObservableCollection<Message.GoBetweenMessage> _messageList;
         private ObservableCollection<string> _stringList;
-        
+
+        public string ConcealedFilePath { get; set; }
+
+        public string BlobName
+        {
+            get => _blobName;
+            set => _blobName = value;
+        }
+
         public ObservableCollection<string> StringList
         {
             get => _stringList;
@@ -54,13 +65,13 @@ namespace Chat.Avalonia
             }
         }
 
-        public string MessageToSend
+        public string MessageToHide
         {
-            get => _messageToSend;
+            get => _messageToHide;
             set
             {
-                _messageToSend = value;
-                OnPropertyChanged(nameof(MessageToSend));
+                _messageToHide = value;
+                OnPropertyChanged(nameof(MessageToHide));
             }
         }
         
@@ -68,10 +79,12 @@ namespace Chat.Avalonia
         
         public ChatMessage(SignalRChatService signalRChatService)
         {
-            _messageToSend = string.Empty;
+            _messageToHide = string.Empty;
             _errorMessage = string.Empty;
+            _blobName = string.Empty;
             _messageList = new ObservableCollection<Message.GoBetweenMessage>();
             _stringList = new ObservableCollection<string>();
+            ConcealedFilePath = string.Empty;
             
             SendMessageCommand = new SendMessageCommand(this, signalRChatService);
             
@@ -86,10 +99,14 @@ namespace Chat.Avalonia
             });
         }
 
-        private void SignalRChatServiceOnMessageReceived(Message.GoBetweenMessage message)
+        private async void SignalRChatServiceOnMessageReceived(Message.GoBetweenMessage message)
         {
-            MessageList.Add(message);
-            StringList.Add(message.Message);
+            Blobs blobs = new Blobs();
+            string downloadPath = await blobs.DownloadImageAsync(message.Message);
+            ImageSteganography image = new ImageSteganography();
+            string mess = image.RevealMessage(Image.FromFile(downloadPath));
+            //MessageList.Add(message);
+            StringList.Add(mess);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
