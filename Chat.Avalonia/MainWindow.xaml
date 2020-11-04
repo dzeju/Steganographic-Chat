@@ -13,7 +13,7 @@
             <TextBox x:Name="MessTxtBox" 
                      Width="380"
                      Height="30"
-                     Text="{Binding Path=MessageToSend, 
+                     Text="{Binding Path=MessageToHide, 
                      Mode=OneWayToSource}"/>
             <Button x:Name="BrowseBtn" 
                     Content="Browse..." 

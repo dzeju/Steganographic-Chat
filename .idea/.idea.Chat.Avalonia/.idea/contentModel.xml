@@ -8,6 +8,7 @@
         <e p=".gitignore" t="Include" />
         <e p="App.xaml" t="Include" />
         <e p="App.xaml.cs" t="Include" />
+        <e p="Blobs.cs" t="Include" />
         <e p="Chat.Avalonia.csproj" t="IncludeRecursive" />
         <e p="ChatMessage.cs" t="Include" />
         <e p="ImageSteganography.cs" t="Include" />
