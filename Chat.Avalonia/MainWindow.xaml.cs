@@ -52,7 +52,7 @@ namespace Chat.Avalonia
         {
             try
             {
-                _chatMessage.ConcealedFilePath = _image.ConcealMessage(_chatMessage.MessageToHide + "&fi");
+                _chatMessage.ConcealedFilePath = _image.ConcealMessage(_chatMessage.MessageToHide + " &fi ");
                 
                 Blobs blobs = new Blobs();
                 _chatMessage.BlobName = await blobs.UploadAsync(_chatMessage.ConcealedFilePath);

@@ -28,19 +28,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcb77340-b4b6-4021-ab6d-a80cc92cb688" name="Default Changelist" comment="Wiadomości nie są już wysyłane do wszystkich włącznie z wysyłającym&#10;Dodano dialog do otwarcia pliku">
-      <change afterPath="$PROJECT_DIR$/Chat.Avalonia/Blobs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat.Avalonia/InvertedBitsCounter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chat.Avalonia/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chat.Avalonia/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Chat.Avalonia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chat.Avalonia/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Avalonia/Chat.Avalonia.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Avalonia/Chat.Avalonia.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Avalonia/ChatMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Avalonia/ChatMessage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat.Avalonia/ImageSteganography.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Avalonia/ImageSteganography.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Avalonia/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Avalonia/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat.Avalonia/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Avalonia/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Avalonia/SendMessageCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Avalonia/SendMessageCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.GoBetweenMessage/obj/Debug/netcoreapp3.1/Chat.GoBetweenMessage.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.GoBetweenMessage/obj/Debug/netcoreapp3.1/Chat.GoBetweenMessage.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.GoBetweenMessage/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.GoBetweenMessage/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat.SignalR/obj/Debug/netcoreapp3.1/Chat.SignalR.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.SignalR/obj/Debug/netcoreapp3.1/Chat.SignalR.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.SignalR/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.SignalR/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +75,7 @@
         <option value="$PROJECT_DIR$/Chat.Avalonia/SendMessageCommand.cs" />
         <option value="$PROJECT_DIR$/Chat.Avalonia/MainWindow.xaml" />
         <option value="$PROJECT_DIR$/Chat.Avalonia/MainWindow.xaml.cs" />
+        <option value="$PROJECT_DIR$/Chat.Avalonia/InvertedBitsCounter.cs" />
         <option value="$PROJECT_DIR$/Chat.Avalonia/ImageSteganography.cs" />
       </list>
     </option>
@@ -266,6 +260,7 @@
       <workItem from="1604442047000" duration="6000" />
       <workItem from="1604509407048" duration="337000" />
       <workItem from="1604509909617" duration="8094000" />
+      <workItem from="1605640288473" duration="1091000" />
     </task>
     <task id="LOCAL-00001" summary="Chat using SignalR">
       <created>1599515121773</created>
