@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Chat.Message
+﻿namespace Chat.Message
 {
     public class GoBetweenMessage
     {

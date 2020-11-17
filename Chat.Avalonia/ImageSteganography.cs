@@ -55,12 +55,6 @@ namespace Chat.Avalonia
             
             var filePath = "Sent/" + Guid.NewGuid() + ".bmp";
             System.IO.File.WriteAllBytes(filePath, MyFile);
-
-            /*Console.WriteLine("Changed 00: " + counter.Changed00);
-            Console.WriteLine("Changed 01: " + counter.Changed01);
-            Console.WriteLine("Changed 10: " + counter.Changed10);
-            Console.WriteLine("Changed 11: " + counter.Changed11);
-            Console.WriteLine("Ile razy sprawdzano:  " + ile + " Bilans zmienionych: " + (counter.Changed00 + counter.Changed01 + counter.Changed10 + counter.Changed11) );*/
             
             return filePath;
         }
@@ -191,10 +185,8 @@ namespace Chat.Avalonia
             var finIndex = 20;
             if (decoded.Contains("&fi"))
             {
-                //Console.WriteLine("widzi &fi");
-                finIndex = decoded.IndexOf("&fi", StringComparison.Ordinal); //("&fin", 0, StringComparison.Ordinal);
+                finIndex = decoded.IndexOf("&fi", StringComparison.Ordinal);
             }
-
             
             return decoded.Substring(0, finIndex);
         }

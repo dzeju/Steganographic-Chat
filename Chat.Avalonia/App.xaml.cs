@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Chat.Avalonia
 {

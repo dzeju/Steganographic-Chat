@@ -1,9 +1,7 @@
 using System;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using System.Drawing;
 using Image = System.Drawing.Image;
 using MessageBox.Avalonia;
 
@@ -34,7 +32,7 @@ namespace Chat.Avalonia
             {
                 _image.MyImage = Image.FromFile(_chatMessage.PathToFile);
                 _chatMessage.ErrorMessage = @"Załadowano obraz";
-                this.Close(); //gotta add sth dude
+                Close(); //gotta add sth dude
             }
             catch (Exception)
             {
@@ -48,13 +46,13 @@ namespace Chat.Avalonia
         {
             try
             {
-                var dialog = new OpenFileDialog()
+                var dialog = new OpenFileDialog
                 {
-                    Title = "Open file",
+                    Title = "Open file"
                     // Almost guaranteed to exist
                     //InitialFileName = Assembly.GetEntryAssembly()?.GetModules().FirstOrDefault()?.FullyQualifiedName
                 };
-                var result = await dialog.ShowAsync((Window) this.VisualRoot);
+                var result = await dialog.ShowAsync((Window) VisualRoot);
                 _chatMessage.PathToFile = result[0]; // CHECK IF WORKS
             }
             catch (Exception ex)

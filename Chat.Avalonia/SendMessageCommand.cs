@@ -25,7 +25,7 @@ namespace Chat.Avalonia
             {
                 if (string.IsNullOrEmpty(_chatMessage.BlobName))
                     throw new Exception();
-                await _signalRChat.SendMessage(new Message.GoBetweenMessage()
+                await _signalRChat.SendMessage(new Message.GoBetweenMessage
                 {
                     Message = _chatMessage.BlobName
                 });

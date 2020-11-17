@@ -1,12 +1,9 @@
 using System;
-using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Microsoft.AspNetCore.SignalR.Client;
-using System.Linq;
-using System.Reflection;
 using static System.String;
 using MessageBox.Avalonia;
 
@@ -16,6 +13,7 @@ namespace Chat.Avalonia
     {
         private readonly ChatMessage _chatMessage;
         private readonly ImageSteganography _image;
+        
         public MainWindow()
         {
             var connection = new HubConnectionBuilder()
@@ -33,7 +31,7 @@ namespace Chat.Avalonia
             this.FindControl<TextBox>("MessTxtBox").KeyDown += OnKeyDown;
         }
 
-        private async void BrowseBtn_Click(object sender, RoutedEventArgs e)
+        private void BrowseBtn_Click(object sender, RoutedEventArgs e)
         {
             var window = new PathWindow();
             window.PassDataContext(_chatMessage, _image);
@@ -53,18 +51,16 @@ namespace Chat.Avalonia
             try
             {
                 _chatMessage.ConcealedFilePath = _image.ConcealMessage(_chatMessage.MessageToHide + " &fi ");
-                
-                Blobs blobs = new Blobs();
-                _chatMessage.BlobName = await blobs.UploadAsync(_chatMessage.ConcealedFilePath);
-                
+                _chatMessage.BlobName = await Blobs.UploadAsync(_chatMessage.ConcealedFilePath);
                 _chatMessage.SendMessageCommand.Execute(sender);
+
                 this.FindControl<TextBox>("MessTxtBox").Text = Empty;
             }
             catch (Exception exception)
             {
                 var messageBox = MessageBoxManager.GetMessageBoxStandardWindow(@"Błąd", exception.Message);
                 await messageBox.Show();
-                //_chatMessage.ErrorMessage = exception.Message;
+                _chatMessage.ErrorMessage = exception.Message;
             }
         }
         

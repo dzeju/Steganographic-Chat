@@ -1,8 +1,7 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
-namespace Chat.SignalR
+namespace Chat.SignalR.Hubs
 {
     public class ChatHub : Hub
     {

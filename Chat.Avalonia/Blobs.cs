@@ -1,47 +1,49 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Azure.Storage;
 using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
 
 namespace Chat.Avalonia
 {
-    public class Blobs
+    public static class Blobs
     {
-        public async Task<string> UploadAsync(string filePath)
+        public static async Task<string> UploadAsync(string filePath)
         {
-            //string path = "/home/dzeju/RiderProjects/blob_test/blob_test/xing.bmp";
+            const string connectionString = "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;";
+            const string containerName = "chat";
+            string fileName;
             
-            string connectionString = "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;";
-            string containerName = "chat";
-            
-            BlobContainerClient container = new BlobContainerClient(connectionString, containerName);
-            
-            if (!await container.ExistsAsync())
+            try
             {
-                await container.CreateAsync();
-                
-            }
+                var container = new BlobContainerClient(connectionString, containerName);
+            
+                if (!await container.ExistsAsync())
+                {
+                    await container.CreateAsync();
+                }
            
-            string fileName = Guid.NewGuid() + ".bmp";
+                fileName = Guid.NewGuid() + ".bmp";
                 
-            BlobClient blob = container.GetBlobClient(fileName);
+                var blob = container.GetBlobClient(fileName);
 
-            await using FileStream file = File.OpenRead(filePath);
+                await using var file = File.OpenRead(filePath);
             
-            await blob.UploadAsync(file);
-            
+                await blob.UploadAsync(file);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
             return fileName;
         }
         
-        public async Task<string> DownloadImageAsync(string blobName)
+        public static async Task<string> DownloadImageAsync(string blobName)
         {
-            string connectionString = "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;";
-            string downloadPath = "Received/" + blobName + ".bmp"; 
+            const string connectionString = "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;";
+            var downloadPath = "Received/" + blobName + ".bmp"; 
             
-            BlobClient blobClient = new BlobClient(connectionString, "chat", blobName);
+            var blobClient = new BlobClient(connectionString, "chat", blobName);
             await blobClient.DownloadToAsync(downloadPath);
             
             return downloadPath;

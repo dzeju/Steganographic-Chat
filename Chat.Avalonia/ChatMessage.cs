@@ -1,4 +1,3 @@
-using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
@@ -13,17 +12,12 @@ namespace Chat.Avalonia
         private string _messageToHide;
         private string _errorMessage;
         private string _pathToFile;
-        private string _blobName;
         private ObservableCollection<Message.GoBetweenMessage> _messageList;
         private ObservableCollection<string> _stringList;
 
         public string ConcealedFilePath { get; set; }
 
-        public string BlobName
-        {
-            get => _blobName;
-            set => _blobName = value;
-        }
+        public string BlobName { get; set; }
 
         public ObservableCollection<string> StringList
         {
@@ -81,7 +75,7 @@ namespace Chat.Avalonia
         {
             _messageToHide = string.Empty;
             _errorMessage = string.Empty;
-            _blobName = string.Empty;
+            BlobName = string.Empty;
             _messageList = new ObservableCollection<Message.GoBetweenMessage>();
             _stringList = new ObservableCollection<string>();
             ConcealedFilePath = string.Empty;
@@ -101,10 +95,9 @@ namespace Chat.Avalonia
 
         private async void SignalRChatServiceOnMessageReceived(Message.GoBetweenMessage message)
         {
-            Blobs blobs = new Blobs();
-            string downloadPath = await blobs.DownloadImageAsync(message.Message);
-            ImageSteganography image = new ImageSteganography();
-            string mess = image.RevealMessage(Image.FromFile(downloadPath));
+            var downloadPath = await Blobs.DownloadImageAsync(message.Message);
+            var image = new ImageSteganography();
+            var mess = image.RevealMessage(Image.FromFile(downloadPath));
             //MessageList.Add(message);
             StringList.Add(mess);
         }
