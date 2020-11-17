@@ -12,6 +12,7 @@
         <e p="Chat.Avalonia.csproj" t="IncludeRecursive" />
         <e p="ChatMessage.cs" t="Include" />
         <e p="ImageSteganography.cs" t="Include" />
+        <e p="InvertedBitsCounter.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="PathWindow.xaml" t="Include" />
